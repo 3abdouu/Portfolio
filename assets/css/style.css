@@ -429,6 +429,8 @@ body {
   gap: 5px;
   font-size: var(--fs-6);
   text-transform: uppercase;
+  color: blue;
+  margin-left: 50px;
 }
 
 .portfolio-card .btn-link ion-icon {
