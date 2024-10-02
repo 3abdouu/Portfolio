@@ -46,3 +46,45 @@ window.addEventListener("scroll", function () {
     backTopBtn.classList.remove("active");
   }
 });
+// document.getElementById('contact-form').addEventListener('submit', function(event) {
+//   event.preventDefault(); // Prevent the form from submitting the normal way
+
+//   emailjs.sendForm('service_w2cpkrs', 'template_w6x8chi', this)
+//       .then(function() {
+//           alert('Email sent successfully!');
+//           window.location.reload(); 
+//       }, function(error) {
+//           alert('Failed to send email, please try again later.');
+//           console.log('Failed...', error);
+//       });
+// });
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  emailjs.sendForm('service_w2cpkrs', 'template_w6x8chi', this)
+  .then(function() {
+      // Show SweetAlert success message
+      Swal.fire({
+        icon: 'success',
+        title: 'Email Sent!',
+        text: 'Your message has been sent successfully.',
+        confirmButtonText: 'OK',
+        width: '40%', // Adjust this value as needed, default is '32rem'
+        padding: '1.5rem', // Adjust padding if necessary
+        customClass: {
+            popup: 'swal2-custom', // Optional: if you want to define custom styles
+        }
+    }).then(() => {
+        window.location.reload();
+    });
+    
+  }, function(error) {
+      // Show SweetAlert error message
+      Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong! Please try again.',
+          confirmButtonText: 'OK'
+      });
+  });
+});

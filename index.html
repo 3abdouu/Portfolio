@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -414,11 +415,11 @@
 
             <div class="wrapper">
 
-              <form action="" class="contact-form">
+              <form action="" class="contact-form" id="contact-form">
 
-                <input type="text" name="name" placeholder="Name" required class="contact-input">
+                <input type="text" name="from_name" placeholder="Name" required class="contact-input">
 
-                <input type="email" name="email" placeholder="Email" required class="contact-input">
+                <input type="email" name="from_email" placeholder="Email" required class="contact-input">
 
                 <textarea name="message" placeholder="Message" required class="contact-input"></textarea>
 
@@ -632,6 +633,13 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+  <script type="text/javascript">
+      (function(){
+          emailjs.init("leyEJj_jwqUHK7N0l");
+      })();
+  </script>
+
 
 </body>
 
